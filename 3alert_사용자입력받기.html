@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /* 입력 받는 함수
+      prompt("출력경고메시지", "입력받을값") : 경고창에서 글자를 받을 수 있음
+      confirm("출력메시지") : 경고창에서 확인을 누르면 'true'값을 받고, 취소를 누르면 'false' 값을 받음
+    */
+
+    /* 원래 코드
+    let a = prompt('첫 번째 숫자를 입력해주세요.')
+    a = Number(a) // 상수에 재할당 하는 경우 const가 아닌 let을 써야함
+    let b = prompt('두 번째 숫자를 입력해주세요.')
+    b = Number(b)
+    */
+
+    // 위와 같은 코드 (간단하게)
+    const a = Number(prompt('첫 번째 숫자를 입력해주세요'))
+    const b = Number(prompt('두 번째 숫자를 입력해주세요'))
+    alert(`${a} + ${b} = ${a+b}`) // 작은따옴표가 아닌 키보드 좌측위 `를 넣어야 함
+
+    /* 자료형 변환 함수
+      Number() 숫자로 변환
+      String() 문자열로 변환
+      Boolean() 불로 변환
+    */
+  </script>
+</head>
+<body>
+</body>
+</html>

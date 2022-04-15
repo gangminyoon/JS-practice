@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+      function showClock(){
+        var currentDate = new Date();
+        var divClock = document.getElementById('divClock');
+        var msg = "현재 시간 : ";
+        if(currentDate.getHours()>12){      //시간이 12보다 크다면 오후 아니면 오전
+          msg += "오후 ";
+          msg += currentDate.getHours()-12+"시 ";
+       }
+       else {
+         msg += "오전 ";
+         msg += currentDate.getHours()+"시 ";
+       }
+ 
+        msg += currentDate.getMinutes()+"분 ";
+        msg += currentDate.getSeconds()+"초";
+
+        divClock.innerText = msg;
+
+        setTimeout(showClock,1000);  //1초마다 갱신
+
+        if(currentDate.getHours()==0){
+          if(currentDate.getMinutes()>=0 && currentDate.getMinutes()<=30){
+            alert("현재는 은행 점검 중입니다.\n점검 시간 : 오전0시~오전0시30분");
+          }
+        }
+      }
+    </script>
+  </head>
+  <body onload="showClock()">
+    <div id="divClock" class="clock">
+    </div>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    const input = Number(prompt('태어난 연도를 입력해주세요.'))
+    const input_tti = input%12
+    const input_gan = input%10
+    const tti = '신,유,술,해,자,축,인,묘,진,사,오,미'.split(',')
+    const gan = '경,신,임,계,갑,을,병,정,무,기'.split(',')
+
+    alert(`${input}년은 ${gan[input_gan]}${tti[input_tti]}년입니다.`)
+    </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 현재 JS 방식
+    const isLeapYear = function(연도 = 0){ // 만약 연도를 입력하지 않았을 때 0이라는 숫자가 들어가게 해줌
+      return (연도%4 === 0) && (연도%100 !== 0) || (연도%400 === 0)
+    }
+    isLeapYear() // 올해가 윤년인지 알려주기를 원함
+
+    const isLeapYear = function(연도 = new Date().getFullYear()){ // 현재 연도가 들어가게 해줌
+      console.log(`구하고 있는 연도 : ${연도}`)
+      return (연도%4 === 0) && (연도%100 !== 0) || (연도%400 === 0)
+    }
+    isLeapYear() // 올해가 윤년인지 알려주기를 원함
+
+    // 과거 JS 방식
+    const isLeapYear = function(연도){
+      if (typeof(연도) === 'undefined'){
+        연도 = new Date().getFullYear()
+      }
+      // 위 3줄은 다음과 같이 변형이 같음 (같은 결과)
+      // 1. 연도 = typeof(연도) === 'undefined' ? new Date().getFullYear() : 연도
+      // 2. 연도 = 연도 || new Date().getFullYear()    -> 연도값이 true이면 연도, false(undefined)이면 getFullYear함수 실행
+
+      console.log(`구하고 있는 연도 : ${연도}`)
+      return (연도%4 === 0) && (연도%100 !== 0) || (연도%400 === 0)
+    }
+    isLeapYear() // 올해가 윤년인지 알려주기를 원함
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+  // 윤년 구하기
+  const year = Number(prompt('연도를 입력해주세요.'))
+
+  const isLeapYear = function(year){
+    return (year%4===0) && (year%100!==0) || (year%400===0)
+  }
+
+  console.log(alert(`입력하신 연도는 윤년일까요?\n ${isLeapYear(year)}`))
+  
+  // 최솟값 구하기
+  const min = function(배열){
+    let output = 배열[0]
+    console.log(`처음 실행 때의 output = ${output}`)
+
+    for (const value of 배열){
+      console.log(`현재 비교 대상 ${output}와 ${value} 중에 작은 것은?`)
+      if (output > value) {
+        output = value
+      }
+      console.log(`= ${output}`)
+    }
+    return output
+  }
+  console.log(min([52, 273, 32, 103, 275, 24, 57]))
+
+  // 최댓값 구하기
+  const max = function(배열){
+    let output = 배열[0]
+
+    for (const value of 배열){
+      if (output < value){
+        output = value
+      }
+    }
+    return output
+  }
+  console.log(max([52, 273, 32, 103, 275, 24, 57]))
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

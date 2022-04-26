@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 배열 (요소-element)
+    const array = [100, 20, '문자열', true, function () {}, () => {}]
+    console.log(array[0])
+    array[0] = 200 // 값 변경 가능
+    console.log(array[0])
+    console.log(array[1])
+
+    // 객체 (속성-property) => 예를 들어 name은 dog라는 객체의 name 속성이라고 부름.
+    // 단 객체 내의 함수는 dog라는 객체의 bark라는 이름의 "메서드(method)"라고 부름. 결국 메서드도 속성에 포함됨
+    const dog = {
+      name: '구름',
+      age: 7,
+      bark: function(){
+        console.log(`${dog.name}이/가 짖습니다!`)
+        console.log(`${this.name}이/가 짖습니다!`) // 위와 같은 것을 가르킴. 즉 익명 함수는 this 바인딩을 함. this 바인딩이란 this를 현재 객체와 연결하는 행위를 말함
+        console.log(this)
+      },
+      sleep: () => {
+        console.log(`${dog.name}이/가 잡니다!`)
+        console.log(`${this.name}이/가 잡니다!`) // 위와 다른 것을 가르킴. 즉 화살표 함수는 this 바인딩을 안함
+        console.log(this)
+      }
+    }
+    console.log(dog.name)
+    dog.name = '별' // 값 변경 가능
+    dog.age = 1
+    console.log(dog.name)
+    console.log(dog.age)
+
+    dog.bark()
+    dog.sleep()
+  </script>
+  <script>
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

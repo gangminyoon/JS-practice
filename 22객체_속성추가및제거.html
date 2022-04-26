@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 처음 만들 때 같이 만드는 것 => 객체의 키와 값을 정적으로 생성한다
+    const pet = {
+      name: '구름',
+      age: 8,
+      detail: {
+        weight: '5kg',
+        height: '50cm'
+      }
+    }
+    // 나중에 만드는 것 => 객체의 키와 값을 동적으로 생성한다
+    pet.color = 'brown'
+
+    // 객체의 키와 값을 동적으로 제거한다
+    delete pet.color
+
+    // 출력
+    console.log(pet)
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -40,6 +40,51 @@
     let 배열 = [273, 52, 103, 32, 57]
     배열 = 배열.map((value, index) => value + "!!")
     console.log(배열) // 결과값은 위와 같음
+
+    // 타이머 함수
+    const a = setTimeout(function() { // 몇초 뒤에 실행
+      console.log('setTimeout 함수입니다!')
+    }, 1000) // ms 기준이므로 1000은 1초
+
+    const b = setInterval(function() { // 일정 시간마다 실행
+      console.log('setInterval 함수입니다!')
+    }, 1000) // ms 기준이므로 1000은 1초
+
+    console.log(a, b)
+    // 타이머 제거 함수
+    clearTimeout(a)
+    clearInterval(b)
+
+    // 즉시 호출 함수(IIFE) : html 내부의 script 태그 안에서 아래와 같이 중복 선언이 불가능함
+    <script>
+      const a = 10
+    </script>
+    <script>
+      const a = 20
+    </script>
+    // 이와 같이 중복을 피해주기 위해 각 함수 내부에서만 사용할 수 있도록 function으로 묶어줌
+    <script>
+      (function () {
+        const a = 10
+        console.log(a)        
+      })()
+    </script>
+    <script>
+      (function () {
+        const a = 20
+        console.log(a)
+      })()
+    </script>
+
+    // 엄격 모드
+    // const나 let을 사용하지 않고 a=10 이런 식으로 넣어도 실행은 되지만, 사용하기엔 위험함
+    // 그렇기 때문에 'use strict'를 앞에 써주면 엄격하게 실행해줌
+    'use strict'
+    a = 10
+    // 그러나 모든 script에 적용이 되면 문제가 될 수 있으므로 이것 또한 즉시 호출 함수처럼 function 내에 입력함
+    (function() {
+      'use strict'
+    })
   </script>
 </head>
 <body>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 프로토타입을 쓰지 않으면 "문자열.indexOf(다른문자열) >= 0"을 많이 써야 하기에 귀찮음
+    // 그러나 아래처럼 한번만 프로토타입에 정의해주면 "문자열.contain(다른문자열)"로 간단하게 쓸 수 있음
+    // 기본자료형에 메서드를 추가시켜주는 것
+    String.prototype.contain = function (다른문자열){
+      return this.indexOf(다른문자열) >= 0
+    }
+
+    const a = '문자열'
+    console.log(`a.contain('문자') : ${a.contain('문자')}`)
+
+    // 다양한 메서드
+    1. toFixed : 소수점 출력
+    const a = 123.456789
+    a.toFixed(0) => 정수부분만 출력 //123
+    a.toFixed(1) => 소수점 한자리까지 출력 // 123.4
+
+    2. Number.isNaN() : 매개변수에 NaN이 오면 true 출력, 아니면 false 출력
+    const a = Number('안녕하세요')
+    Number.isNaN(a) => true
+    Number.isNaN(20) => false
+
+    3. Number.isFinite() : 정수, 실수 등은 true, 셀 수 없는 것은 false가 출력됨
+    Number.isFinite(10) => true
+    Number.isFinite(10.10) => true
+    Number.isFinite(10/0) => false
+
+    4. trim() : 앞뒤의 공백을 없애줌 (사용자에게 입력받을 때 주로 사용)
+    '    ㅇㅂㅇ    '.trim() => ㅇㅂㅇ
+
+    5. split() : 쉼표로 잘라서 배열로 입력
+    '가, 나, 다'.split(',') => ["가", "나", "다"]
+
+    6. Math
+    Math.E
+    Math.PI
+    Math.floor(10.1) => 10 (내림)
+    Math.ceil(10.1) => 11 (올림)
+    Math.round(10.1) => 10 (반올림)
+    Math.max(52, 273, 103) => 273
+    Math.min(52, 273, 103) => 52
+    Math.min(...[52, 273, 103]) => 52 // 배열을 넣고 싶으면 배열전개연산자를 써야함
+    Math.random() => 0~1 사이의 랜덤한 숫자 추출
+    Math.floor(Math.random() * 50) => 0~50 사이의 랜덤한 정수 추출
+    등등...
+   
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

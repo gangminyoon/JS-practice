@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="lodash.js"> // 외부 js 불러오기
+  // 또는 링크로 불러오기도 가능
+  </script>
+  <script>
+  const books = [{
+        name:'혼자 공부하는 파이썬',
+        price:18000,
+        publisher:'한빛 미디어'
+    },{
+        name: 'HTML5 웹 프로그래밍 입문',
+        price:26000,
+        publisher:'한빛아카데미'
+    } ,{
+        name:'머신러닝 딥러닝 실전 개발 입문',
+        price:30000,
+        publisher:'위키북스'
+    },{
+        name:'딥러닝을 위한 수학',
+        price:25000,
+        publisher:'위키북스'
+    }]
+    const output = _.sortBy(books, ['publisher', 'price']) // 원하는 순서대로 정렬
+    console.log(output)
+
+    // 시간 관련 라이브러리 : Luxon
+    // 엑셀 같은 테이블 관련 라이브러리 : Handsontable
+    // 데이터 시각화 관련 라이브러리 : d3.js, chart.js, three.js
+
+    // _.orderby 사용해보기 (책이름을 오름차순으로 정렬하기)
+    const books2 = [{
+        name:'혼자 공부하는 파이썬',
+        price:18000,
+        publisher:'한빛 미디어'
+    },{
+        name: 'HTML5 웹 프로그래밍 입문',
+        price:26000,
+        publisher:'한빛아카데미'
+    } ,{
+        name:'머신러닝 딥러닝 실전 개발 입문',
+        price:30000,
+        publisher:'위키북스'
+    },{
+        name:'딥러닝을 위한 수학',
+        price:25000,
+        publisher:'위키북스'
+    }]
+    const output2 = _.orderBy(books2, ['name'], ['asc'])
+    console.log(output2)
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

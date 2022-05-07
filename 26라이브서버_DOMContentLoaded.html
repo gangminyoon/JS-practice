@@ -1,0 +1,22 @@
+DOM(Document Object Model) : 문서 객체 모델
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => { // DOM 조작하려면 처음에 써야하는 것. DOMContentLoaded 이벤트가 발생했을 때 아래 콜백함수를 실행해달라는 의미
+      // 문서 객체 조작 가능 부분!
+    })
+  </script>
+</head>
+<body>
+  <h1>안녕하세요!</h1>
+  <script>
+    // 문서 객체 조작 가능 부분! 여기서는 이미 DOM이 완성된 상태라 DOMContentLoaded 이벤트를 쓰지 않아도 됨
+  </script>
+</body>
+</html>

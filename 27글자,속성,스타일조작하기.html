@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. 문자 조작 (textContent, innerHTML 이용)
+      const header1 = document.querySelector('#textContent')
+      const header2 = document.querySelector('#innerHTML')
+      // 값을 추출한다
+      console.log(header1.textContent)
+      console.log(header2.innerHTML)
+      // 값을 넣는다
+      header1.textContent = '원하는<br>문자열'
+      header2.innerHTML = '원하는<br>문자열'
+
+      // 2. 속성 조작 (setAttribute, getAttribute 이용)
+      const img = document.querySelector('img')
+      // 값을 넣는다
+      //img.setAttribute('src', 'http://placekitten.com/200/200')
+      img.src = 'http://placekitten.com/200/200' // 표준에 있는 속성은 바로 활용 가능
+      // 값을 추출한다
+      //console.log(img.getAttribute('src'))
+      console.log(img.src)
+
+      // 3. 스타일 조작
+      const divs = document.querySelectorAll('div')
+      divs.forEach((div, key) => {
+        div.style.backgroundColor = `rgb(${key*25.5}, ${key*25.5}, ${key*25.5})` // 그라데이션 만들기
+        div.style.height = '10px'
+        // div.style['backround-color']
+      })
+    })
+  </script>
+</head>
+<body>
+  <h1 id="textContent">textContent 속성 기존 문자열</h1>
+  <h1 id="innerHTML">innerHTML 속성 기존 문자열</h1>
+  <img src="" alt="">
+
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</body>
+</html>

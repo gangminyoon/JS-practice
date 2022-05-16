@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.querySelector('input')
+      //const textarea = document.querySelector('textarea')
+      //const button = document.querySelector('button') //버튼 사용시
+      const p = document.querySelector('p')
+
+      //입력양식에 값이 들어가는 순서 : keydown → keypress → 입력양식에 값이 들어감 → keyup
+      //change 이벤트 : 입력 양식에 값 입력을 마쳤을 때 사용(값 입력 후 Enter를 클릭하거나 마우스로 다른 곳을 클릭을 해야 값이 들어감)
+
+      //button.addEventListener('click', () => { //버튼 사용시
+      input.addEventListener('keyup', () => {
+        //입력을 숫자로 변환
+        p.textContent = `${Number(input.value)*2.54}cm`
+        //p.textContent = `${Number(textarea.value)*2.54}cm`
+        //숫자가 아니라면 리턴
+        if(isNaN(input.value)){
+          p.textContent = '숫자를 입력해주세요'
+          return
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+  <input type="text"> inch<br>
+  <!--<textarea type="text"></textarea> inch<br>-->
+  <!--<button>계산</button> //버튼 사용시-->
+  <p></p>
+</body>
+</html>

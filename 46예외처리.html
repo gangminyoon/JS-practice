@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    // 1. 기본 예외 처리
+    document.addEventListener('DOMContentLoaded', () => {
+      const h1 = document.querySelector('h1')
+      // 조건문을 사용해서 예외를 처리하는 것을 '기본 예외 처리'라고 함
+      if (h1===null){
+        console.log('오류가 발생했습니다!')
+      } else {
+        h1.textContent = '변경!'
+      }
+    })
+
+    // 2. 고급 예외 처리
+    document.addEventListener('DOMContentLoaded', () => {
+      const h1 = document.querySelector('h1')
+      
+      try {
+        // 예외가 발생할 가능성이 있는 코드
+        h1.textContent = '변경!'
+      } catch (예외_객체) {
+        // 예외가 발생했을 때 실행할 코드
+        console.log('오류가 발생했습니다!')
+        console.log(예외_객체)
+        console.log(예외_객체.name)
+        console.log(예외_객체.message)
+      } finally {
+        // 무조건적으로 실행되는 코드
+      }
+    })
+
+    // 3-1. finally를 사용하는 이유 (finally를 사용하지 않은 경우)
+    document.addEventListener('DOMContentLoaded', () => {
+      const 예 = () => {
+        try {
+          alert('A 위치입니다')
+          throw "예외 강제 발생" // throw 키워드로 예외를 강제로 발생시킴
+        } catch (e) {
+          alert('B 위치입니다')
+          return
+        }
+        alert('C 위치입니다')
+      }
+      예()
+    })
+    // 위 코드는 "A위치입니다, B위치입니다"만 출력함. return 키워드를 사용해 함수를 벗어났으므로 "C위치입니다"는 출력하지 않음
+
+    // 3-2. finally를 사용하는 이유 (finally를 사용한 경우)
+    document.addEventListener('DOMContentLoaded', () => {
+      const 예 = () => {
+        try {
+          alert('A 위치입니다')
+          throw "예외 강제 발생"
+        } catch (e) {
+          alert('B 위치입니다')
+          return
+        } finally {
+          alert('C 위치입니다')
+        }
+      }
+      예()
+    })
+    // 위 코드는 "A위치입니다, B위치입니다, C위치입니다"를 모두 출력함. finally 구문을 반드시 실행한다는 특성 때문
+
+    // 4. throw 구문 (원의 둘레 구하기 예시)
+    const getPerimeter = (r) => {
+      if (r<0) {
+        throw '길이는 음수가 될 수 없습니다'
+      }
+      const pi = 3.14
+      return 2 * pi * r
+    }
+    console.log(getPerimeter(10)) // 여기에 음수를 입력해버리면 오류는 발생하지 않지만 길이가 음수가 나와버리는 위험성을 내포하기에 throw를 사용함
+    console.log('프로그램이 정상적으로 종료되었습니다.')
+    // 위와 같은 상황을 막기 위해 try catch를 사용함
+
+    try{
+      console.log(getPerimeter(-10))
+    } catch(e){
+      console.log('어떤 문제가 발생했습니다.')
+    }
+    console.log('프로그램이 정상적으로 종료되었습니다.')
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
